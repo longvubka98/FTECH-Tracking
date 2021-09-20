@@ -131,26 +131,25 @@ trackingEvent(ClevertapEvent.ct_show_inbox, {'tabs':['Offers','Promotions'],'nav
 #### Delete message with id
 
 ```javascript 
-trackingEvent(ClevertapEvent.ct_delete_inbox_message_for_id)
-CleverTap.deleteInboxMessageForId('Message Id');		
+trackingEvent(ClevertapEvent.ct_delete_inbox_message_for_id, '123456')	
 ```
 
 #### Mark a message as Read for inbox Id
 
-```javascript 
-CleverTap.markReadInboxMessageForId('Message Id');		
+```javascript
+trackingEvent(ClevertapEvent.ct_mark_read_inbox_message_for_id, '123456')	
 ```
 
 #### pushInbox Notification Viewed Event For Id
 
 ```javascript 
-CleverTap.pushInboxNotificationViewedEventForId('Message Id');		
+trackingEvent(ClevertapEvent.ct_push_inbox_notification_viewed_event_for_id, '123456')
 ```
 
 #### push Inbox Notification Clicked Event For Id
 
 ```javascript 
-CleverTap.pushInboxNotificationClickedEventForId('Message Id');			
+trackingEvent(ClevertapEvent.ct_push_inbox_notification_clicked_event_for_id, '123456')		
 ```
 
 -----------
@@ -160,51 +159,40 @@ CleverTap.pushInboxNotificationClickedEventForId('Message Id');
 #### Creating Notification Channel
 
 ```javascript 
-CleverTap.createNotificationChannel("CtRNS", "Clever Tap React Native Testing", "CT React Native Testing", 1, true);			
+trackingEvent(ClevertapEvent.ct_create_notification_channel, {
+channelID: 'CtRNS',
+channelName: 'Clever Tap React Native Testing',
+channelDescription: 'CT React Native Testing',
+important: 1,
+showBadge: true
+}	
 ```
 
 #### Delete Notification Channel
 
 ```javascript 
-CleverTap.deleteNotificationChannel("RNTesting");		
+trackingEvent(ClevertapEvent.ct_push_inbox_notification_clicked_event_for_id, 'RNTesting')		
 ```
 
 #### Creating a group notification channel
 
 ```javascript 
-CleverTap.createNotificationChannelGroup(String groupId, String groupName);		
+trackingEvent(ClevertapEvent.ct_push_inbox_notification_clicked_event_for_id, {
+groupId: 'RNTesting',
+groupName: 'React native testing'
+})		
 ```
 
 #### Delete a group notification channel
 
 ```javascript 
-CleverTap.deleteNotificationChannelGroup(String groupId);			
+trackingEvent(ClevertapEvent.ct_push_inbox_notification_clicked_event_for_id, 'RNTesting')			
 ```
 
 #### Registering Fcm Token
 
 ```javascript 
-CleverTap.setPushToken("<Replace with FCM Token value>", CleverTap.FCM);
-```
-
------------
- 
-## Native Display
-
-#### Get Display Unit for Id
-
-```javascript 
-CleverTap.getDisplayUnitForId('Unit Id', (err, res) => {
-        console.log('Get Display Unit for Id:', res, err);
-});
-```
-
-#### Get All Display Units
-
-```javascript 
-CleverTap.getAllDisplayUnits((err, res) => {
-        console.log('All Display Units: ', res, err);
-});
+trackingEvent(ClevertapEvent.ct_push_inbox_notification_clicked_event_for_id, 'fcm_token')	
 ```
 
 -----------
@@ -214,167 +202,58 @@ CleverTap.getAllDisplayUnits((err, res) => {
 #### Set Product Configuration to default
 
 ```javascript 
-CleverTap.setDefaultsMap({'text_color': 'red', 'msg_count': 100, 'price': 100.50, 'is_shown': true, 'json': '{"key":"val"}'});
+trackingEvent(ClevertapEvent.ct_set_defaults_map, {'text_color': 'red', 'msg_count': 100, 'price': 100.50, 'is_shown': true, 'json': '{"key":"val"}'})
 ```
 
 #### Fetching product configs
 
 ```javascript 
-CleverTap.fetch();
+trackingEvent(ClevertapEvent.ct_fetch)
 ```
 
 #### Activate the most recently fetched product config
 
 ```javascript 
-CleverTap.activate();
+trackingEvent(ClevertapEvent.ct_activate)
 ```
 
 #### Fetch And Activate product config
 
 ```javascript 
-CleverTap.fetchAndActivate();
+trackingEvent(ClevertapEvent.ct_fetch_and_activate)
 ```
 
 #### Fetch Minimum Time Interval
 
 ```javascript 
-CleverTap.fetchWithMinimumIntervalInSeconds(60);
+trackingEvent(ClevertapEvent.ct_fetch_with_minimum_interval_in_seconds, 60)
 ```
 
 #### Set Minimum Time Interval for Fetch 
 
 ```javascript 
-CleverTap.setMinimumFetchIntervalInSeconds(60);
-```
-
-#### Get Boolean key
-
-```javascript 
-CleverTap.getProductConfigBoolean('is_shown', (err, res) => {
-	console.log('PC is_shown val in boolean :', res, err);
-});
-```
-#### Get Long
-
-```javascript 
-CleverTap.getNumber('msg_count', (err, res) => {
-	console.log('PC is_shown val in number(long)  :', res, err);
-});
-```
-#### Get Double
-
-```javascript 
-CleverTap.getNumber('price', (err, res) => {
-	console.log('PC price val in number :', res, err);
-});		
-```
-#### Get String
-
-```javascript 
-CleverTap.getProductConfigString('text_color', (err, res) => {
-        console.log('PC text_color val in string :', res, err);
-});	
-```
-#### Get String (JSON)
-
-```javascript 
-CleverTap.getProductConfigString('json', (err, res) => {
-	console.log('PC json val in string :', res, err);
-});	
+trackingEvent(ClevertapEvent.ct_set_minimum_fetch_interval_in_seconds, 60)
 ```
 
 #### Delete all activated, fetched and defaults configs
 
 ```javascript 
-CleverTap.resetProductConfig();
+trackingEvent(ClevertapEvent.ct_reset_product_config)
 ```
-
-#### Get last fetched timestamp in millis
-
-```javascript 
-CleverTap.getLastFetchTimeStampInMillis((err, res) => {
-        console.log('LastFetchTimeStampInMillis in string: ', res, err);
-});		
-```
-
-## Feature Flag
-
-#### Get Feature Flag
-
-```javascript 
-CleverTap.getFeatureFlag('is_dark_mode', false, (err, res) => {
-	console.log('FF is_dark_mode val in boolean :', res, err);
-});
-```
-
-## CleverTap ID
-
-#### Get CleverTap ID
-
-```javascript 
-CleverTap.getCleverTapID((err, res) => {
-        console.log('CleverTapID', res, err);
-});
-```
-
------------
 
 ## App Personalisation
 
 #### Enable Personalization
 
 ```javascript 
-CleverTap.enablePersonalization();		
+trackingEvent(ClevertapEvent.ct_enable_personalization)		
 ```
 
 #### Disable Personalization
 
 ```javascript 
-CleverTap.disablePersonalization();
+trackingEvent(ClevertapEvent.ct_disable_personalization)	
 ```
-
-#### Get Profile Name
-
-```javascript 
-CleverTap.profileGetProperty('Name', (err, res) => {
-	console.log('CleverTap Profile Name: ', res, err);
-});
-```
-
------------
-
-## Attributions
-
-#### Get CleverTap Attribution Identifier
-
-```javascript 
-CleverTap.profileGetCleverTapAttributionIdentifier((err, res) => {
-         console.log('CleverTapAttributionIdentifier', res, err);
-});
-```
-
------------
-
-## InApp Notification Controls
-
-#### Suspend InApp Notifications
-
-```javascript 
-CleverTap.suspendInAppNotifications();
-```
-
-#### Discard InApp Notifications
-
-```javascript 
-CleverTap.discardInAppNotifications();
-```
-
-#### Resume InApp Notifications
-
-```javascript 
-CleverTap.resumeInAppNotifications();
-```
-
 
 ### GoogleAnalytic.
 
