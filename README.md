@@ -72,34 +72,26 @@ trackingEvent(ClevertapEvent.ct_profile_add_multi_value_for_key, { key: 'letters
 
 #### Create a User profile when user logs in (On User Login)
 
-```javascript 
-CleverTap.onUserLogin({'Name': 'React-Test', 'Identity': '11102008', 'Email': 'r@gmail.com', 'custom1': 43});
-```
-
-#### Get CleverTap Reference id
-
 ```javascript
-CleverTap.profileGetCleverTapID((err, res) => {
-         console.log('CleverTapID', res, err);
-});
+trackingEvent(ClevertapEvent.ct_on_user_login, {'Name': 'React-Test', 'Identity': '11102008', 'Email': 'r@gmail.com', 'custom1': 43})
 ```
 
 #### Set Location to User Profile
 
-```javascript 
-CleverTap.setLocation(34.15, -118.20);
+```javascript
+trackingEvent(ClevertapEvent.ct_set_location, { lat: 34.15, long: -118.20 })
 ```
 
 #### Increment a User Profile property
 
-```javascript 
-CleverTap.profileIncrementValueForKey(1, "score");
+```javascript
+trackingEvent(ClevertapEvent.ct_profile_increment_value_for_key, { key: 'score', value: 1 })
 ```
 
 #### Decrement a User Profile property
 
 ```javascript 
-CleverTap.profileDecrementValueForKey(1, "score");
+trackingEvent(ClevertapEvent.ct_profile_decrement_value_for_key, { key: 'score', value: 1 })
 ```
 
 -----------
@@ -108,14 +100,14 @@ CleverTap.profileDecrementValueForKey(1, "score");
 
 #### Record an event  
 
-```javascript 
-CleverTap.recordEvent('testEvent');
+```javascript
+trackingEvent(ClevertapEvent.ct_record_event, { eventName: 'fs_login', evenData: {} })
 ```
 
 #### Record Charged event
 
 ```javascript 
-CleverTap.recordChargedEvent({'totalValue': 20, 'category': 'books'}, [{'title': 'book1'}, {'title': 'book2'}, {'title': 'book3'}]);
+trackingEvent(ClevertapEvent.ct_record_changed_event, { detail: 'fs_login', items: [] })
 ```
 
 -----------
@@ -125,60 +117,21 @@ CleverTap.recordChargedEvent({'totalValue': 20, 'category': 'books'}, [{'title':
 #### Initialize the CleverTap App Inbox Method
 
 ```javascript 
-CleverTap.initializeInbox();
+trackingEvent(ClevertapEvent.ct_initialize_inbox)
 ```
 
 #### Show the App Inbox
 
 ```javascript
-CleverTap.showInbox({'tabs':['Offers','Promotions'],'navBarTitle':'My App Inbox','navBarTitleColor':'#FF0000','navBarColor':'#FFFFFF','inboxBackgroundColor':'#AED6F1','backButtonColor':'#00FF00'
+trackingEvent(ClevertapEvent.ct_show_inbox, {'tabs':['Offers','Promotions'],'navBarTitle':'My App Inbox','navBarTitleColor':'#FF0000','navBarColor':'#FFFFFF','inboxBackgroundColor':'#AED6F1','backButtonColor':'#00FF00'
                                 ,'unselectedTabColor':'#0000FF','selectedTabColor':'#FF0000','selectedTabIndicatorColor':'#000000',
-                                'noMessageText':'No message(s)','noMessageTextColor':'#FF0000'});
+                                'noMessageText':'No message(s)','noMessageTextColor':'#FF0000'})
  ```
-
-#### Get Total message count
-
-```javascript 
-CleverTap.getInboxMessageCount((err, res) => {
-	console.log('Total Messages: ', res, err);
-});	
-```
-
-#### Get Total message count
-
-```javascript 
-CleverTap.getInboxMessageUnreadCount((err, res) => {
-	console.log('Unread Messages: ', res, err);
-});	
-```
-
-#### Get All Inbox Messages
-
-```javascript 
-CleverTap.getAllInboxMessages((err, res) => {
-	console.log('All Inbox Messages: ', res, err);
-});	
-```
-
-#### Get all Inbox unread messages
-
-```javascript 
-CleverTap.getUnreadInboxMessages((err, res) => {
-	console.log('Unread Inbox Messages: ', res, err);
-});	
-```
-
-#### Get inbox Id
-
-```javascript 
-CleverTap.getInboxMessageForId('Message Id',(err, res) => {
-        console.log("marking message read = "+res);
-});			
-```
 
 #### Delete message with id
 
 ```javascript 
+trackingEvent(ClevertapEvent.ct_delete_inbox_message_for_id)
 CleverTap.deleteInboxMessageForId('Message Id');		
 ```
 
