@@ -50,3 +50,10 @@ trackingEvent(CommonEvent.fs_custom_event, { eventName: 'fs_login', eventValues:
 
 [Check in here](https://github.com/longvubka98/FTECH-Tracking/blob/main/GoogleAnalytic.md)
 
+### AppsFlyer
+
+[Check in here](https://github.com/longvubka98/FTECH-Tracking/blob/main/AppsFlyer.md)
+
+### Firebase
+
+[Check in here](https://github.com/longvubka98/FTECH-Tracking/blob/main/Firebase.md)
