@@ -1,5 +1,3 @@
-### Clevertap.
-
 ### User Profiles
 
 #### Update User Profile(Push Profile)
