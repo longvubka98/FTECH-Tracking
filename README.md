@@ -44,5 +44,9 @@ trackingEvent(CommonEvent.fs_custom_event, { eventName: 'fs_login', eventValues:
 
 ### Clevertap
 
+[Check in here](https://docs.google.com/document/d/1htHxDUe-Rn56WPBh-NjC2z-IsYad6P12tZDaQRvTplw/edit?usp=sharing)
+
 ### GoogleAnalytic.
+
+[Check in here](https://docs.google.com/document/d/1htHxDUe-Rn56WPBh-NjC2z-IsYad6P12tZDaQRvTplw/edit?usp=sharing)
 
