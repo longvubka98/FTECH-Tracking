@@ -44,16 +44,24 @@ trackingEvent(CommonEvent.fs_custom_event, { eventName: 'fs_login', eventValues:
 
 ### Clevertap
 
-[Check in here](https://github.com/longvubka98/FTECH-Tracking/blob/main/CleverTap.md)
+[Dashboard](https://eu1.dashboard.clevertap.com/)
+
+[Check document here](https://github.com/longvubka98/FTECH-Tracking/blob/main/CleverTap.md)
 
 ### GoogleAnalytic.
 
-[Check in here](https://github.com/longvubka98/FTECH-Tracking/blob/main/GoogleAnalytic.md)
+[Dashboard](https://analytics.google.com/analytics/web)
+
+[Check document here](https://github.com/longvubka98/FTECH-Tracking/blob/main/GoogleAnalytic.md)
 
 ### AppsFlyer
 
-[Check in here](https://github.com/longvubka98/FTECH-Tracking/blob/main/AppsFlyer.md)
+[Dashboard](https://github.com/longvubka98/FTECH-Tracking/blob/main/CleverTap.md)
+
+[Check document here](https://github.com/longvubka98/FTECH-Tracking/blob/main/AppsFlyer.md)
 
 ### Firebase
 
-[Check in here](https://github.com/longvubka98/FTECH-Tracking/blob/main/Firebase.md)
+[Dashboard](https://github.com/longvubka98/FTECH-Tracking/blob/main/CleverTap.md)
+
+[Check document here](https://github.com/longvubka98/FTECH-Tracking/blob/main/Firebase.md)
